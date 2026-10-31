@@ -1,0 +1,67 @@
+/* Стилі карток датчиків. Підключіть файл після основного CSS. */
+.sensors-section {
+  width: min(1120px, calc(100% - 32px));
+  margin: 48px auto;
+}
+
+.sensors-section__title {
+  margin: 0 0 24px;
+}
+
+.sensors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.sensor-card {
+  padding: 24px;
+  border: 1px solid #dedbd5;
+  border-left: 5px solid #777;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgb(0 0 0 / 6%);
+}
+
+.sensor-card.normal { border-left-color: #27945b; }
+.sensor-card.warning { border-left-color: #e3a126; }
+.sensor-card.critical { border-left-color: #d84444; }
+
+.sensor-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sensor-card__id,
+.sensor-card__status {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sensor-card__status {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #f0efec;
+}
+
+.sensor-card.normal .sensor-card__status { color: #187344; background: #e8f5ed; }
+.sensor-card.warning .sensor-card__status { color: #95620b; background: #fff3d9; }
+.sensor-card.critical .sensor-card__status { color: #a92c2c; background: #fdeaea; }
+
+.sensor-card h3 { margin: 20px 0 6px; }
+.sensor-card__address,
+.sensor-card__caption,
+.sensor-card__history { color: #777; }
+.sensor-card__value { margin: 18px 0 0; font-size: 36px; font-weight: 700; }
+.sensor-card__value span { font-size: 16px; }
+.sensor-card__caption,
+.sensor-card__history { margin: 4px 0 0; font-size: 13px; }
+
+.sensors-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-bottom: 24px;
+}

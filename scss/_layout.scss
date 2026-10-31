@@ -1,0 +1,55 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+#main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid v.$color-border;
+    padding: v.$space-md v.$space-lg;
+}
+
+.header-container {
+    @include m.container;
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-md;
+
+    @include m.respond-to(v.$bp-tablet) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+main {
+    @include m.container;
+}
+
+section,
+aside {
+    background: #ffffff;
+    padding: v.$space-lg;
+    border-radius: v.$radius;
+    border: 1px solid v.$color-border;
+    margin-top: v.$space-lg;
+}
+
+footer {
+    background-color: v.$color-footer;
+    color: white;
+    padding: v.$space-xl 0;
+    margin-top: v.$space-xl;
+}
+
+.footer-container {
+    @include m.container;
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-lg;
+    padding: 0 v.$space-md;
+
+    @include m.respond-to(v.$bp-tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
